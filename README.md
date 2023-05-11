@@ -4,6 +4,6 @@ Let me know if you have any suggestions or issues with the scripts, this is a be
 
 THESE SCRIPTS ARE DIRECTED SOLEY TOWARDS WINDOWS 11 COMPUTERS
 You can also compile multiple scripts together to accomidate your needs and edit them as well using (https://ducktoolkit.com/)
-
+There are messages explaining the code before each "REM" if you have any questions dont be afraid to ask. :)
 
 Please use responsibly... just because you can, should you?
