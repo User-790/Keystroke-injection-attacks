@@ -1,3 +1,4 @@
+REM The '1000' is equal to miliseconds so when you look to delay an action during the script use "DELAY 1000"- means 1 second, 5000-5 seconds. The DELAY command just means do nothing for X amount of time. 
 DELAY 1000
 CTRL ESC
 DELAY 900
