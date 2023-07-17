@@ -2,10 +2,10 @@ DELAY 1000
 REM GUI is the windows key in this instance and will use the short cut to open the run window
 GUI r
 DELAY 300
-REM this is what will be typed in the run window, first it will call powershell to run cmd prompt as an admin.
+REM This is what will be typed in the run window, first it will call powershell to run cmd prompt as an admin.
 STRING powershell Start-Process cmd -Verb runAs
 DELAY 400
-REM This is the shortcut where it will run the  run window as an admin
+REM This is the shortcut where it will run the 'run window' as an admin
 CTRL-SHIFT ENTER
 DELAY 3000
 REM This will permit the window to run as an admin
